@@ -71,7 +71,7 @@ class ChoiceFilter extends Filter
 
     public function getRenderSettings()
     {
-        return array('sonata_type_filter_default', array(
+        return array('Sonata\AdminBundle\Form\Type\Filter\DefaultType', array(
                 'operator_type' => 'sonata_type_boolean',
                 'field_type' => $this->getFieldType(),
                 'field_options' => $this->getFieldOptions(),

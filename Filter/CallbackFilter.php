@@ -50,7 +50,7 @@ class CallbackFilter extends Filter
             'active_callback' => function ($data) {
                 return isset($data['value']) && $data['value'];
             },
-            'field_type' => 'text',
+            'field_type' => 'Symfony\Component\Form\Extension\Core\Type\TextType',
             'operator_type' => 'hidden',
             'operator_options' => array(),
         );
@@ -58,7 +58,7 @@ class CallbackFilter extends Filter
 
     public function getRenderSettings()
     {
-        return array('sonata_type_filter_default', array(
+        return array('Sonata\AdminBundle\Form\Type\Filter\DefaultType', array(
                 'field_type' => $this->getFieldType(),
                 'field_options' => $this->getFieldOptions(),
                 'operator_type' => $this->getOption('operator_type'),

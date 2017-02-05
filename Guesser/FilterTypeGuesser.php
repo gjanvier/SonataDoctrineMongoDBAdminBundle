@@ -46,10 +46,10 @@ class FilterTypeGuesser extends AbstractTypeGuesser
                     //case ClassMetadataInfo::MANY_TO_ONE:
                     //case ClassMetadataInfo::MANY_TO_MANY:
 
-                    $options['operator_type'] = 'sonata_type_equal';
+                    $options['operator_type'] = 'Sonata\CoreBundle\Form\Type\EqualType';
                     $options['operator_options'] = array();
 
-                    $options['field_type'] = 'document';
+                    $options['field_type'] = 'Doctrine\Bundle\MongoDBBundle\Form\Type\DocumentType';
                     $options['field_options'] = array(
                         'class' => $mapping['targetDocument'],
                     );
@@ -87,7 +87,7 @@ class FilterTypeGuesser extends AbstractTypeGuesser
             case 'id':
             case 'string':
             case 'text':
-                $options['field_type'] = 'text';
+                $options['field_type'] = 'Symfony\Component\Form\Extension\Core\Type\TextType';
 
                 return new TypeGuess('doctrine_mongo_string', $options, Guess::MEDIUM_CONFIDENCE);
             case 'time':

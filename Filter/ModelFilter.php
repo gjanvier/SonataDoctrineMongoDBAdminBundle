@@ -49,16 +49,16 @@ class ModelFilter extends Filter
         return array(
             'mapping_type' => false,
             'field_name' => false,
-            'field_type' => 'document',
+            'field_type' => 'Doctrine\Bundle\MongoDBBundle\Form\Type\DocumentType',
             'field_options' => array(),
-            'operator_type' => 'sonata_type_equal',
+            'operator_type' => 'Sonata\CoreBundle\Form\Type\EqualType',
             'operator_options' => array(),
         );
     }
 
     public function getRenderSettings()
     {
-        return array('sonata_type_filter_default', array(
+        return array('Sonata\AdminBundle\Form\Type\Filter\DefaultType', array(
             'field_type' => $this->getFieldType(),
             'field_options' => $this->getFieldOptions(),
             'operator_type' => $this->getOption('operator_type'),

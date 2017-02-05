@@ -78,7 +78,7 @@ class FormContractor implements FormContractorInterface
      */
     public function getFormBuilder($name, array $options = array())
     {
-        return $this->getFormFactory()->createNamedBuilder($name, 'form', null, $options);
+        return $this->getFormFactory()->createNamedBuilder($name, 'Symfony\Component\Form\Extension\Core\Type\FormType', null, $options);
     }
 
     /**
